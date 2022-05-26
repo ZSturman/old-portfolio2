@@ -8,7 +8,7 @@
 ===============================*/
 
 :root{
-    --ff: 'Poppins', sans-serif;;
+    --ff: 'Poppins', sans-serif;
 
     /* font-weight */
     --fw-thin: 100;
@@ -42,6 +42,8 @@
     --primary-clr-drk: #6c93aa;
     --primary-clr-light: #a2cfe9;
 
+    --primary-clr-faded: #8bbedb82;
+
     --primary-clr-a: #8bbedb85;
     --primary-clr-drk-a: #6c93aa58;
     --primary-clr-light-a: #a2cfe998;
@@ -53,6 +55,10 @@
     --secondary-clr-a: #49d1a87f;
     --secondary-clr-light-a: #6cd8b89b;
     --secondary-clr-drk-a: #299c7a53;
+
+
+    --logline-border: #6cd8b89b;
+
 
     --third-clr: #71d4df;
     --third-clr-light: #81e4ef;
@@ -133,33 +139,52 @@ html, body{
 }
 
 .body{
-    background-image: linear-gradient(rgb(30, 56, 60), rgb(25, 18, 36), rgb(0, 0, 0), rgb(58, 56, 117), rgb(252, 206, 87));
+    background-image: linear-gradient(rgb(13, 19, 39), rgb(25, 18, 36), rgb(0, 0, 0), rgb(58, 56, 117), rgb(168, 86, 39));
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
 
-/* .sidebar{
-    background: rgba(5, 68, 104, .4);
+
+
+/* ===============================
+
+    accents
+
+===============================*/
+
+.fuzzy{
+    position: absolute;
+  /*   width: 100px;
+    height: 100px; */
+}
+
+.crescent-moon-svg{
+    position: absolute;
+    z-index: -1;
+    scale: 100;
+}
+
+.fuzzy-moon{
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+}
+
+/* ===============================
+
+    scroll icon
+
+===============================*/
+
+.scroll-icon{
     position: fixed;
-    width: 225px;
-    height: 100%;
-    padding: 20px 0;
-    transition: all 0.5s ease;
-    top: 0;
+    left: 50%;
+    bottom: 5%;
+    opacity: .5;
 }
 
-.sidebar1{
-    left: 0;
-}
-.sidebar2{
-    right: 0;
-} */
-
-/* section{
-    background-image: linear-gradient(to bottom, rgba(0, 140, 255, 0.529),rgba(255, 0, 225, 0.564));
-}
- */
 
 
 /* ===============================
@@ -216,10 +241,12 @@ html, body{
     padding: .15rem 1rem;
 }
 
+
+
 .nav-link{
     text-decoration: none;
     font-size: var(--fs-btn-b);
-    color: var(--primary-clr);
+    color: var(--primary-clr-faded);
 }
 
 .active{
@@ -228,6 +255,11 @@ html, body{
     padding: .15rem 1rem;
     background-color: transparent;
     transition: .2s;
+    color: var(--primary-clr);
+}
+
+.nav-link-contact{
+    color: var(--primary-clr);
 }
 
 .nav-contact-button{
@@ -299,23 +331,21 @@ html, body{
 ===============================*/
 
 .logline{
+    width: 80%;
     text-align: center;
     font-size: var(--fs-section-heading);
-    border: 3px solid var(--secondary-clr-light-a);
+    border: 3px solid var(--logline-border);
     border-radius: var(--border-radius);
     padding: 3rem 6rem;
-    
-    
-
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     hr{
         display: block;
         text-align: center;
+        border-color: var(--logline-border);
+        background-color: var(--logline-border);
     }
-    
 }
 
 .ll{
@@ -428,96 +458,6 @@ html, body{
     }
 }
 
-
-
-/* .project{
-    width: 100%;
-    max-width: 80vw;
-    max-height: 30vh;
-    background-image: linear-gradient(to bottom right, var(--third-clr-light-a), var(--third-clr-drk-a));
-    display: flex;
-    align-items: center;
-    border-radius: var(--border-radius);
-    margin: 6rem 1rem 0 3rem;
-
-    transform: translateX(3rem);
-}
- */
-/* 
-.project-one-img{
-    min-width: 15rem;
-    max-width: 15rem;
-    height: 15rem;
-    transform: translateX(-8rem);
-    position: relative;
-}
-
-.project-one-img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: flex;
-    border-radius: var(--border-radius);
-} */
-
-/* .project-one-info{
-    display: flex;
-    flex-direction: column;
-    max-height: 20rem;
-
-    transform: translateX(-4rem);
-}
-
-.project-one-date-and-title{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
-
-.project-one-date span{
-    display: block;
-    text-align: end;
-    color: var(--faded-txt-clr);
-    font-size: var(--fs-p-small);
-    font-weight: var(--fw-light);
-    margin: 1rem 0;
-}
-
-.project-one-title{
-    font-size:var(--fs-p-heading);
-    text-transform: uppercase;
-    color: var(--secondary-clr);
-} */
-
-/* .project-one-text{
-    font-size: var(--fs-p-content);
-    color: var(--primary-txt-clr);
-    text-align: left;
-}
-
-.project-one-buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 1rem;
-}
-
-.project-one-btn{
-    padding: var(--btn-padding);
-    letter-spacing: .2ch;
-    text-transform: uppercase;
-    font-size: var(--fs-btn-n);
-    color: var(--primary-txt-clr-light);
-    background-image: linear-gradient(to right, var(--third-clr-drk-a) 0%, var(--third-clr-light-a) 100%);
-    border-radius: var(--btn-border-radius);
-    text-decoration: none;
-    margin-bottom: 1rem;
-    width: fit-content;
-    justify-content: center;
-}
-
- */
-
 /* ===============================
 
     about
@@ -574,10 +514,7 @@ html, body{
 
     margin-left: 20vw;
     margin-right: 20vw;
-
-    padding-top: 10vh;
     
-  
     height: 100vh;
 }
 
@@ -650,6 +587,14 @@ html, body{
 
 ===============================*/
 
+.contact-container{
+        background-image: url(/css/images/bottom/default.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+
 .contact{
    /*  border: var(--border-test-2); */
    top: 50%;
@@ -694,14 +639,15 @@ html, body{
 .input{
     font-size: 1.5rem;
     text-transform: lowercase;
+    width: 30vw;
     border-radius: .5rem;
     background-color: rgb(212, 212, 212);
-    /* color: var(--primary-clr-old); */
+    color: var(--primary-clr-old);
     padding: .5rem;
 }
 
 .contact-info{
-    /* color: var(--secondary-clr-light-old); */
+    color: var(--secondary-clr-light-old);
     font-size: var(--fs-p-content);
     padding: 1ch;
 }
@@ -739,6 +685,7 @@ html, body{
     width: 100%;
     z-index: 1;
 }
+
 
 
 .footer-container{
