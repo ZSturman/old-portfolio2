@@ -585,7 +585,7 @@
                         </h5>
                     </div>
                     <div class="form">
-                        <form action="contactform.php" method="POST"  data-netlify="true">
+                        <form action="contactform.php" method="POST"  data-netlify="true" data-netlify-recaptcha="true">
                             <div class="field">
                                 <input class="input" type="text" name="name" id="name" placeholder="Name" required data-validation-required-message="Please enter your name.">
                             </div>
@@ -598,9 +598,9 @@
                             <div class="field">
                                 <textarea class="input" name="message" id="message" rows="7" placeholder="Message" required data-validation-required-message="Please enter a message."></textarea>
                             <div class="field">
-                                <div data-netlify-recaptcha="true"></div>
+                                <div></div>
                                 <ul class="actions">
-                                    <li><input class="button" type="submit" value="Send Message" /></li>
+                                    <li><input class="button" type="submit" name="submit" value="Send Message" /></li>
                                 </ul>
                             </div>
                         </form>
